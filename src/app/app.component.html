@@ -2,45 +2,57 @@
   {{title}}
 </h1>
 
-<p> Enter your age, the cities you've lived in &amp; how many years you've
-lived in each city. </p>
+<p> Enter the name of the city you lived in &amp; how many years you were
+there </p>
 <p> Then we'll tell you your ehtniCITY! </p>
 
-<h2> Age: </h2>
-<kendo-numerictextbox
-  name="age"
-  [value]="0"
-  [format]="'n0'"
-  [restrictDecimals]="true"
-  [decimals]="0"
-></kendo-numerictextbox>
-
 <h2> City 1 </h2>
-<input type="text" [(ngModel)]="city1Name">
+<input type="text" value="city 1" [(ngModel)]="city1Name">
 <kendo-numerictextbox
-  name="city1Years"
-  [value]="0"
+  [(ngModel)]="city1Years"
   [format]="'n0'"
   [restrictDecimals]="true"
   [decimals]="0"
 ></kendo-numerictextbox>
 
 <h2> City 2 </h2>
-<input type="text" [(ngModel)]="city2Name">
+<input type="text" value="city 2" [(ngModel)]="city2Name">
 <kendo-numerictextbox
-  name="city2Years"
-  [value]="0"
+  [(ngModel)]="city2Years"
   [format]="'n0'"
   [restrictDecimals]="true"
   [decimals]="0"
 ></kendo-numerictextbox>
 
 <h2> City 3 </h2>
-<input type="text" [(ngModel)]="city3Name">
+<input type="text" value="city 3" [(ngModel)]="city3Name">
 <kendo-numerictextbox
-  name="city3Years"
-  [value]="35"
+  [(ngModel)]="city3Years"
   [format]="'n0'"
   [restrictDecimals]="true"
   [decimals]="0"
 ></kendo-numerictextbox>
+
+<kendo-chart>
+  <kendo-chart-legend position="top"></kendo-chart-legend>
+  <kendo-chart-series>
+    <kendo-chart-series-item type="column"
+      [data]="[{
+        category: city1Name,
+        value: city1Years,
+        color: '#FFBDA8'
+        },{
+        category: city2Name,
+        value: city2Years,
+        color: '#FFE0D6'
+        },{
+        category: city3Name,
+        value: city3Years,
+        color: '#FFD7CB'
+        },{
+      }]"
+      field="value"
+      categoryField="category">
+    </kendo-chart-series-item>
+  </kendo-chart-series>
+</kendo-chart>

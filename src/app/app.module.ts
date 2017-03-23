@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { InputsModule } from '@progress/kendo-angular-inputs'
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 
@@ -15,6 +17,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     InputsModule,
+    ChartsModule,
     HttpModule
   ],
   providers: [],
