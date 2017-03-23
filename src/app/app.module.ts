@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { InputsModule } from '@progress/kendo-angular-inputs'
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,6 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
+    InputsModule,
     HttpModule
   ],
   providers: [],
